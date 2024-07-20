@@ -20,7 +20,5 @@ class PresensiPiket extends Model
         'jam_pulang',
         'tugas',
     ];
-
-
 }
 
