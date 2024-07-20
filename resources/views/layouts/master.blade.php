@@ -23,18 +23,18 @@
             <div class="flex items-center justify-center px-5 text-center h-header group-data-[layout=horizontal]:hidden group-data-[sidebar-size=sm]:fixed group-data-[sidebar-size=sm]:top-0 group-data-[sidebar-size=sm]:bg-vertical-menu group-data-[sidebar-size=sm]:group-data-[sidebar=dark]:bg-vertical-menu-dark group-data-[sidebar-size=sm]:group-data-[sidebar=brand]:bg-vertical-menu-brand group-data-[sidebar-size=sm]:group-data-[sidebar=modern]:bg-gradient-to-br group-data-[sidebar-size=sm]:group-data-[sidebar=modern]:to-vertical-menu-to-modern group-data-[sidebar-size=sm]:group-data-[sidebar=modern]:from-vertical-menu-form-modern group-data-[sidebar-size=sm]:group-data-[sidebar=modern]:bg-vertical-menu-modern group-data-[sidebar-size=sm]:z-10 group-data-[sidebar-size=sm]:w-[calc(theme('spacing.vertical-menu-sm')_-_1px)] group-data-[sidebar-size=sm]:group-data-[sidebar=dark]:dark:bg-zink-700">
                 <a href="{{ route('home') }}" class="group-data-[sidebar=dark]:hidden group-data-[sidebar=brand]:hidden group-data-[sidebar=modern]:hidden">
                     <span class="hidden group-data-[sidebar-size=sm]:block">
-                        <img src="assets/images/logo.png" alt="" class="h-6 mx-auto">
+                        <img src="{{ URL::to('assets/images/logo.png') }}" alt="" class="h-6 mx-auto">
                     </span>
                     <span class="group-data-[sidebar-size=sm]:hidden">
-                        <img src="assets/images/logo-dark.png" alt="" class="h-6 mx-auto">
+                        <img src="{{ URL::to('assets/images/logo-dark.png') }}" alt="" class="h-6 mx-auto">
                     </span>
                 </a>
                 <a href="{{ route('home') }}" class="hidden group-data-[sidebar=dark]:block group-data-[sidebar=brand]:block group-data-[sidebar=modern]:block">
                     <span class="hidden group-data-[sidebar-size=sm]:block">
-                        <img src="assets/images/logo.png" alt="" class="h-6 mx-auto">
+                        <img src="{{ URL::to('assets/images/logo.png') }}" alt="" class="h-6 mx-auto">
                     </span>
                     <span class="group-data-[sidebar-size=sm]:hidden">
-                        <img src="assets/images/logo-light.png" alt="" class="h-6 mx-auto">
+                        <img src="{{ URL::to('assets/images/logo-light.png') }}" alt="" class="h-6 mx-auto">
                     </span>
                 </a>
                 <button type="button" class="hidden p-0 float-end" id="vertical-hover">
@@ -58,18 +58,18 @@
                         <div class="items-center justify-center hidden px-5 text-center h-header group-data-[layout=horizontal]:md:flex group-data-[layout=horizontal]:ltr::pl-0 group-data-[layout=horizontal]:rtl:pr-0">
                             <a href="{{ route('home') }}">
                                 <span class="hidden">
-                                    <img src="assets/images/logo.png" alt="" class="h-6 mx-auto">
+                                    <img src="{{ URL::to('assets/images/logo.png') }}" alt="" class="h-6 mx-auto">
                                 </span>
                                 <span class="group-data-[topbar=dark]:hidden group-data-[topbar=brand]:hidden">
-                                    <img src="assets/images/logo-dark.png" alt="" class="h-6 mx-auto">
+                                    <img src="{{ URL::to('assets/images/logo-dark.png') }}" alt="" class="h-6 mx-auto">
                                 </span>
                             </a>
                             <a href="{{ route('home') }}" class="hidden group-data-[topbar=dark]:block group-data-[topbar=brand]:block">
                                 <span class="group-data-[topbar=dark]:hidden group-data-[topbar=brand]:hidden">
-                                    <img src="assets/images/logo.png" alt="" class="h-6 mx-auto">
+                                    <img src="{{ URL::to('assets/images/logo.png') }}" alt="" class="h-6 mx-auto">
                                 </span>
                                 <span class="group-data-[topbar=dark]:block group-data-[topbar=brand]:block">
-                                    <img src="assets/images/logo-light.png" alt="" class="h-6 mx-auto">
+                                    <img src="{{ URL::to('assets/images/logo-light.png') }}" alt="" class="h-6 mx-auto">
                                 </span>
                             </a>
                         </div>
@@ -87,43 +87,43 @@
                         <div class="flex gap-3 ms-auto">
                             <div class="relative flex items-center dropdown h-header">
                                 <button type="button" class="inline-flex justify-center items-center p-0 text-topbar-item transition-all w-[37.5px] h-[37.5px] duration-200 ease-linear bg-topbar rounded-md dropdown-toggle btn hover:bg-topbar-item-bg-hover hover:text-topbar-item-hover group-data-[topbar=dark]:bg-topbar-dark group-data-[topbar=dark]:hover:bg-topbar-item-bg-hover-dark group-data-[topbar=dark]:hover:text-topbar-item-hover-dark group-data-[topbar=brand]:bg-topbar-brand group-data-[topbar=brand]:hover:bg-topbar-item-bg-hover-brand group-data-[topbar=brand]:hover:text-topbar-item-hover-brand group-data-[topbar=dark]:dark:bg-zink-700 group-data-[topbar=dark]:dark:hover:bg-zink-600 group-data-[topbar=dark]:dark:text-zink-500 group-data-[topbar=dark]:dark:hover:text-zink-50" id="flagsDropdown" data-bs-toggle="dropdown">
-                                    <img src="assets/images/us.svg" alt="" id="header-lang-img" class="h-5 rounded-sm">
+                                    <img src="{{ URL::to('assets/images/us.svg') }}" alt="" id="header-lang-img" class="h-5 rounded-sm">
                                 </button>
                                 <div class="absolute z-50 hidden p-4 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[10rem] flex flex-col gap-4 dark:bg-zink-600" aria-labelledby="flagsDropdown">
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="en" title="English">
-                                        <img src="assets/images/us.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/us.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">English</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="sp" title="Spanish">
-                                        <img src="assets/images/es.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/es.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">Spanish</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="gr" title="German">
-                                        <img src="assets/images/de.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/de.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">German</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="fr" title="French">
-                                        <img src="assets/images/fr.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/fr.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">French</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="jp" title="Japanese">
-                                        <img src="assets/images/jp.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/jp.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">Japanese</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="ch" title="Chinese">
-                                        <img src="assets/images/china.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/china.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">Chinese</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="it" title="Italian">
-                                        <img src="assets/images/it2.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/it2.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">Italian</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="ru" title="Russian">
-                                        <img src="assets/images/ru2.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/ru2.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">Russian</h6>
                                     </a>
                                     <a href="#!" class="flex items-center gap-3 group/items language" data-lang="ar" title="Arabic">
-                                        <img src="assets/images/ae2.svg" alt="" class="object-cover h-4 rounded-full">
+                                        <img src="{{ URL::to('assets/images/ae2.svg') }}" alt="" class="object-cover h-4 rounded-full">
                                         <h6 class="transition-all duration-200 ease-linear font-15medium text- text-slate-600 dark:text-zink-200 group-hover/items:text-custom-500">Arabic</h6>
                                     </a>
                                 </div>
@@ -173,7 +173,7 @@
                                         <div class="flex flex-col gap-1" id="notification-list">
                                             <a href="#!" class="flex gap-3 p-4 product-item hover:bg-slate-50 dark:hover:bg-zink-500 follower">
                                                 <div class="w-10 h-10 rounded-md shrink-0 bg-slate-100">
-                                                    <img src="assets/images/avatar-3.png" alt="" class="rounded-md">
+                                                    <img src="{{ URL::to('assets/images/avatar-3.png') }}" alt="" class="rounded-md">
                                                 </div>
                                                 <div class="grow">
                                                     <h6 class="mb-1 font-medium"><b>@willie_passem</b> followed you</h6>
@@ -185,7 +185,7 @@
                                             </a>
                                             <a href="#!" class="flex gap-3 p-4 product-item hover:bg-slate-50 dark:hover:bg-zink-500 mention">
                                                 <div class="w-10 h-10 bg-yellow-100 rounded-md shrink-0">
-                                                    <img src="assets/images/avatar-5.png" alt="" class="rounded-md">
+                                                    <img src="{{ URL::to('assets/images/avatar-5.png') }}" alt="" class="rounded-md">
                                                 </div>
                                                 <div class="grow">
                                                     <h6 class="mb-1 font-medium"><b>@caroline_jessica</b> commented on your post</h6>
@@ -211,7 +211,7 @@
                                             <a href="#!" class="flex gap-3 p-4 product-item hover:bg-slate-50 dark:hover:bg-zink-500 mention">
                                                 <div class="relative shrink-0">
                                                     <div class="w-10 h-10 bg-pink-100 rounded-md">
-                                                        <img src="assets/images/avatar-7.png" alt="" class="rounded-md">
+                                                        <img src="{{ URL::to('assets/images/avatar-7.png') }}" alt="" class="rounded-md">
                                                     </div>
                                                     <div class="absolute text-orange-500 -bottom-0.5 -right-0.5 text-16">
                                                         <i class="ri-heart-fill"></i>
@@ -247,7 +247,7 @@
                             <div class="relative flex items-center dropdown h-header">
                                 <button type="button" class="inline-block p-0 transition-all duration-200 ease-linear bg-topbar rounded-full text-topbar-item dropdown-toggle btn hover:bg-topbar-item-bg-hover hover:text-topbar-item-hover group-data-[topbar=dark]:text-topbar-item-dark group-data-[topbar=dark]:bg-topbar-dark group-data-[topbar=dark]:hover:bg-topbar-item-bg-hover-dark group-data-[topbar=dark]:hover:text-topbar-item-hover-dark group-data-[topbar=brand]:bg-topbar-brand group-data-[topbar=brand]:hover:bg-topbar-item-bg-hover-brand group-data-[topbar=brand]:hover:text-topbar-item-hover-brand group-data-[topbar=dark]:dark:bg-zink-700 group-data-[topbar=dark]:dark:hover:bg-zink-600 group-data-[topbar=brand]:text-topbar-item-brand group-data-[topbar=dark]:dark:hover:text-zink-50 group-data-[topbar=dark]:dark:text-zink-200" id="dropdownMenuButton" data-bs-toggle="dropdown">
                                     <div class="bg-pink-100 rounded-full">
-                                        <img src="assets/images/profile.png" alt="" class="w-[37.5px] h-[37.5px] rounded-full">
+                                        <img src="{{ URL::to('assets/images/profile.png') }}" alt="" class="w-[37.5px] h-[37.5px] rounded-full">
                                     </div>
                                 </button>
                                 <div class="absolute z-50 hidden p-4 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[14rem] dark:bg-zink-600" aria-labelledby="dropdownMenuButton">
@@ -255,7 +255,7 @@
                                     <a href="#!" class="flex gap-3 mb-3">
                                         <div class="relative inline-block shrink-0">
                                             <div class="rounded bg-slate-100 dark:bg-zink-500">
-                                                <img src="assets/images/profile.png" alt="" class="w-12 h-12 rounded">
+                                                <img src="{{ URL::to('assets/images/profile.png') }}" alt="" class="w-12 h-12 rounded">
                                             </div>
                                             <span class="-top-1 ltr:-right-1 rtl:-left-1 absolute w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full dark:border-zink-600"></span>
                                         </div>
@@ -318,7 +318,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex gap-2 product">
                             <div class="flex items-center justify-center w-12 h-12 rounded-md bg-slate-100 shrink-0 dark:bg-zink-500">
-                                <img src="assets/images/img-012.png" alt="" class="h-8">
+                                <img src="{{ URL::to('assets/images/img-012.png')}}" alt="" class="h-8">
                             </div>
                             <div class="overflow-hidden grow">
                                 <div class="ltr:float-right rtl:float-left">
@@ -343,7 +343,7 @@
                         </div>
                         <div class="flex gap-2 product">
                             <div class="flex items-center justify-center w-12 h-12 rounded-md bg-slate-100 shrink-0 dark:bg-zink-500">
-                                <img src="assets/images/img-03.png" alt="" class="h-8">
+                                <img src="{{ URL::to('assets/images/img-03.png')}}" alt="" class="h-8">
                             </div>
                             <div class="overflow-hidden grow">
                                 <div class="ltr:float-right rtl:float-left">
@@ -368,7 +368,7 @@
                         </div>
                         <div class="flex gap-2 product">
                             <div class="flex items-center justify-center w-12 h-12 rounded-md bg-slate-100 shrink-0 dark:bg-zink-500">
-                                <img src="assets/images/img-09.png" alt="" class="h-8">
+                                <img src="{{ URL::to('assets/images/img-09.png')}}" alt="" class="h-8">
                             </div>
                             <div class="overflow-hidden grow">
                                 <div class="ltr:float-right rtl:float-left">
@@ -651,18 +651,18 @@
         </div>
     </div>
 
-    <script src='assets/libs/choices.js/public/assets/scripts/choices.min.js'></script>
-    <script src="assets/libs/%40popperjs/core/umd/popper.min.js"></script>
-    <script src="assets/libs/tippy.js/tippy-bundle.umd.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/prismjs/prism.js"></script>
-    <script src="assets/libs/lucide/umd/lucide.js"></script>
-    <script src="assets/js/starcode.bundle.js"></script>
+    <script src="{{ URL::to('assets/libs/choices.js/public/assets/scripts/choices.min.js')}}"></script>
+    <script src="{{ URL::to('assets/libs/%40popperjs/core/umd/popper.min.js')}}"></script>
+    <script src="{{ URL::to('assets/libs/tippy.js/tippy-bundle.umd.min.js')}}"></script>
+    <script src="{{ URL::to('assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{ URL::to('assets/libs/prismjs/prism.js')}}"></script>
+    <script src="{{ URL::to('assets/libs/lucide/umd/lucide.js')}}"></script>
+    <script src="{{ URL::to('assets/js/starcode.bundle.js')}}"></script>
     <!--apexchart js-->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ URL::to('assets/libs/apexcharts/apexcharts.min.js')}}"></script>
     <!--dashboard ecommerce init js-->
-    <script src="assets/js/pages/dashboards-ecommerce.init.js"></script>
+    <script src="{{ URL::to('assets/js/pages/dashboards-ecommerce.init.js')}}"></script>
     <!-- App js -->
-    <script src="assets/js/app.js"></script>
+    <script src="{{ URL::to('assets/js/app.js')}}"></script>
 </body>
 </html>
