@@ -54,11 +54,11 @@ class MahasiswaController extends Controller
     {
         //validate form
         $request->validate([
+            'id'           => 'required|min:12',
             'image'          => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama'          => 'required|min:10',
-            'nim'           => 'required|min:12',
             'angkatan'      => 'required|numeric',
-            'kelas'         => 'required|numeric',
+            'kelas'         => 'required|min:5',
             'jabatan'       => 'required|min:5'
         ]);
 
@@ -68,9 +68,9 @@ class MahasiswaController extends Controller
 
         //create mahasiswa
         Mahasiswa::create([
+            'id'           => $request->id,
             'image'          => $image->hashName(),
             'nama'          => $request->nama,
-            'nim'           => $request->nim,
             'angkatan'      => $request->angkatan,
             'kelas'         => $request->kelas,
             'jabatan'       => $request->jabatan
@@ -123,9 +123,8 @@ class MahasiswaController extends Controller
         $request->validate([
             'image'          => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama'          => 'required|min:10',
-            'nim'           => 'required|min:12',
             'angkatan'      => 'required|numeric',
-            'kelas'         => 'required|numeric',
+            'kelas'         => 'required|min:5',
             'jabatan'       => 'required|min:5'
         ]);
 
@@ -146,7 +145,6 @@ class MahasiswaController extends Controller
             $mahasiswa->update([
                 'image'          => $image->hashName(),
                 'nama'          => $request->nama,
-                'nim'           => $request->nim,
                 'angkatan'      => $request->angkatan,
                 'kelas'         => $request->kelas,
                 'jabatan'       => $request->jabatan
@@ -158,7 +156,6 @@ class MahasiswaController extends Controller
             $mahasiswa->update([
                 'image'          => $image->hashName(),
                 'nama'          => $request->nama,
-                'nim'           => $request->nim,
                 'angkatan'      => $request->angkatan,
                 'kelas'         => $request->kelas,
                 'jabatan'       => $request->jabatan

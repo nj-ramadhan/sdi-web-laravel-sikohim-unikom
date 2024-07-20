@@ -28,7 +28,7 @@
             </div>
             <div class="col-span-12 card lg:col-span-6 2xl:col-span-9">
                 <div class="card-body">
-                    <h6>NIM</h6><h3>{{ $mahasiswa->nim }}</h3>
+                    <h6>NIM</h6><h3>{{ $mahasiswa->id }}</h3>
                     <hr/>
                     <h6>Nama</h6><h3>{{ $mahasiswa->nama }}</h3>
                     <hr/>

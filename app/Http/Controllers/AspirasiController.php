@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //import model mahasiswa
 use App\Models\Aspirasi; 
+use App\Models\Mahasiswa; 
 
 //import return type View
 use Illuminate\View\View;
@@ -43,6 +44,21 @@ class AspirasiController extends Controller
         return view('aspirasi.create');
     }
 
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @param  mixed $request
+     * @return RedirectResponse
+     */
+    public function autocomplete(Request $request): RedirectResponse
+    {
+        $data = Mahasiswa::select("id")
+            ->where('id', 'LIKE', '%'. $request->get('query'). '%')
+            ->get();    
+        return response()->json($data);
+    }
+
     /**
      * store
      *
@@ -53,10 +69,10 @@ class AspirasiController extends Controller
     {
         //validate form
         $request->validate([
-            'judul'          => 'required|min:10',
+            'judul'         => 'required|min:10',
             'isi'           => 'required|min:25',
             'pengusul'      => 'required|min:10',
-            'nim'         => 'required|numeric',
+            'nim'           => 'required|min:12',
         ]);
 
 
@@ -116,7 +132,7 @@ class AspirasiController extends Controller
             'judul'          => 'required|min:10',
             'isi'           => 'required|min:25',
             'pengusul'      => 'required|min:10',
-            'nim'         => 'required|numeric',
+            'nim'           => 'required|min:12',
         ]);
 
         //get aspirasi by ID
