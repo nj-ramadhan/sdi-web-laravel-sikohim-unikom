@@ -29,16 +29,15 @@
             <div class="col-span-12 card lg:col-span-6 2xl:col-span-9">
                 <div class="card-body">
                     <h6>NIM</h6><h3>{{ $mahasiswa->id }}</h3>
-                    <hr/>
+                    <hr/><br/>
                     <h6>Nama</h6><h3>{{ $mahasiswa->nama }}</h3>
-                    <hr/>
+                    <hr/><br/>
                     <h6>Angkatan</h6><h3>{{ $mahasiswa->angkatan }}</h3>
-                    <hr/>
+                    <hr/><br/>
                     <h6>Kelas</h6><h3>{{ $mahasiswa->kelas }}</h3>
-                    <hr/>
+                    <hr/><br/>
                     <h6>Jabatan</h6><h3>{{ $mahasiswa->jabatan }}</h3>
                     <hr/>
-
                 </div>
             </div>
         </div>

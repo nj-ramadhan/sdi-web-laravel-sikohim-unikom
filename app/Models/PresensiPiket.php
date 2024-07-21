@@ -16,6 +16,7 @@ class PresensiPiket extends Model
     protected $fillable = [
         'nama',
         'nim',
+        'tanggal',
         'jam_datang',
         'jam_pulang',
         'tugas',

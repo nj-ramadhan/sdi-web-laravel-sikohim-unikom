@@ -6,11 +6,11 @@
     <div class="container-fluid group-data-[content=boxed]:max-w-boxed mx-auto">
         <div class="flex flex-col gap-2 py-4 md:flex-row md:items-center print:hidden">
             <div class="grow">
-                <h5 class="text-16">Data Aspirasi</h5>
+                <h5 class="text-16">Data Uang Kas</h5>
             </div>
             <ul class="flex items-center gap-2 text-sm font-normal shrink-0">
                 <li class="relative before:content-['\ea54'] before:font-remix ltr:before:-right-1 rtl:before:-left-1  before:absolute before:text-[18px] before:-top-[3px] ltr:pr-4 rtl:pl-4 before:text-slate-400 dark:text-zink-200">
-                    <a href="{{ route('aspirasi.index') }}" class="text-slate-400 dark:text-zink-200">Aspirasi</a>
+                    <a href="{{ route('uang_kas.index') }}" class="text-slate-400 dark:text-zink-200">Uang Kas</a>
                 </li>
                 <li class="text-slate-700 dark:text-zink-100">
                     Detail
@@ -20,14 +20,22 @@
         <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
             <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                 <div class="card-body">
-                    <h6>NIM Pengusul</h6><h3>{{ $aspirasi->nim }}</h3>
+                    <h6>Nama Penyetor</h6><h3>{{ $uang_kas->nama }}</h3>
                     <hr/><br/>
-                    <h6>Nama Pengusul</h6><h3>{{ $aspirasi->pengusul }}</h3>
+                    <h6>NIM Penyetor</h6><h3>{{ $uang_kas->nim }}</h3>
                     <hr/><br/>
-                    <h6>Judul</h6><h3>{{ $aspirasi->judul }}</h3>
+                    <h6>Tanggal Bayar</h6><h3>{{ $uang_kas->tanggal_bayar }}</h3>
                     <hr/><br/>
-                    <h6>Isi Usulan</h6><h3>{{ $aspirasi->isi }}</h3>
-                    <hr/>
+                    <h6>Nominal Bayar</h6><h3>@currency($uang_kas->nominal_bayar)</h3>
+                    <hr/><br/>
+                    <h6>Status</h6>
+                    <h3>
+                        @if ($uang_kas->status === 1)
+                            <span class="verification_status px-2.5 py-0.5 text-xs inline-block font-medium rounded border bg-green-100 border-green-200 text-green-500 dark:bg-green-500/20 dark:border-green-500/20">Terverifikasi</span>
+                        @else
+                            <span class="verification_status px-2.5 py-0.5 text-xs inline-block font-medium rounded border bg-red-100 border-red-200 text-red-500 dark:bg-red-500/20 dark:border-red-500/20">Belum Terverifikasi</span>
+                        @endif
+                    </h3>
                 </div>
             </div>
         </div>

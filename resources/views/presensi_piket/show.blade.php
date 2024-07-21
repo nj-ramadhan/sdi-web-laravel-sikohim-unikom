@@ -6,11 +6,11 @@
     <div class="container-fluid group-data-[content=boxed]:max-w-boxed mx-auto">
         <div class="flex flex-col gap-2 py-4 md:flex-row md:items-center print:hidden">
             <div class="grow">
-                <h5 class="text-16">Data Aspirasi</h5>
+                <h5 class="text-16">Data Presensi Piket</h5>
             </div>
             <ul class="flex items-center gap-2 text-sm font-normal shrink-0">
                 <li class="relative before:content-['\ea54'] before:font-remix ltr:before:-right-1 rtl:before:-left-1  before:absolute before:text-[18px] before:-top-[3px] ltr:pr-4 rtl:pl-4 before:text-slate-400 dark:text-zink-200">
-                    <a href="{{ route('aspirasi.index') }}" class="text-slate-400 dark:text-zink-200">Aspirasi</a>
+                    <a href="{{ route('presensi_piket.index') }}" class="text-slate-400 dark:text-zink-200">Presensi Piket</a>
                 </li>
                 <li class="text-slate-700 dark:text-zink-100">
                     Detail
@@ -20,13 +20,17 @@
         <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
             <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                 <div class="card-body">
-                    <h6>NIM Pengusul</h6><h3>{{ $aspirasi->nim }}</h3>
+                    <h6>Nama Petugas Piket</h6><h3>{{ $presensi_piket->nama }}</h3>
                     <hr/><br/>
-                    <h6>Nama Pengusul</h6><h3>{{ $aspirasi->pengusul }}</h3>
+                    <h6>NIM Petugas Piket</h6><h3>{{ $presensi_piket->nim }}</h3>
                     <hr/><br/>
-                    <h6>Judul</h6><h3>{{ $aspirasi->judul }}</h3>
+                    <h6>Tanggal</h6><h3>{{ $presensi_piket->tanggal }}</h3>
                     <hr/><br/>
-                    <h6>Isi Usulan</h6><h3>{{ $aspirasi->isi }}</h3>
+                    <h6>Jam Datang</h6><h3>{{ $presensi_piket->jam_datang }}</h3>
+                    <hr/><br/>
+                    <h6>Jam Pulang</h6><h3>{{ $presensi_piket->jam_pulang }}</h3>
+                    <hr/><br/>
+                    <h6>Deskripsi Tugas</h6><h3>{{ $presensi_piket->tugas }}</h3>
                     <hr/>
                 </div>
             </div>

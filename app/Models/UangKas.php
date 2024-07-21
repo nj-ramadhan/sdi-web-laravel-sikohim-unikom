@@ -17,6 +17,7 @@ class UangKas extends Model
         'nama',
         'nim',
         'tanggal_bayar',
+        'nominal_bayar',
         'status',
     ];
 }
