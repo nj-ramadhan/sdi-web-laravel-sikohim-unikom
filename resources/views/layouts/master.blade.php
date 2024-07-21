@@ -251,7 +251,7 @@
                                     </div>
                                 </button>
                                 <div class="absolute z-50 hidden p-4 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[14rem] dark:bg-zink-600" aria-labelledby="dropdownMenuButton">
-                                    <h6 class="mb-2 text-sm font-normal text-slate-500 dark:text-zink-300">Welcome to starcode</h6>
+                                    <h6 class="mb-2 text-sm font-normal text-slate-500 dark:text-zink-300">Selamat datang di SIKOHIM</h6>
                                     <a href="#!" class="flex gap-3 mb-3">
                                         <div class="relative inline-block shrink-0">
                                             <div class="rounded bg-slate-100 dark:bg-zink-500">
@@ -260,7 +260,7 @@
                                             <span class="-top-1 ltr:-right-1 rtl:-left-1 absolute w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full dark:border-zink-600"></span>
                                         </div>
                                         <div>
-                                            <h6 class="mb-1 text-15">StarCode Kh</h6>
+                                            <h6 class="mb-1 text-15">SIKOHIM</h6>
                                             <p class="text-slate-500 dark:text-zink-300">Web Developer</p>
                                         </div>
                                     </a>
@@ -438,11 +438,11 @@
                 <div class="group-data-[layout=horizontal]:mx-auto group-data-[layout=horizontal]:max-w-screen-2xl w-full">
                     <div class="grid items-center grid-cols-1 text-center lg:grid-cols-2 text-slate-400 dark:text-zink-200 ltr:lg:text-left rtl:lg:text-right">
                         <div>
-                            <script>document.write(new Date().getFullYear())</script> StarCode Kh
+                            <script>document.write(new Date().getFullYear())</script> SIKOHIM
                         </div>
                         <div class="hidden lg:block">
                             <div class="ltr:text-right rtl:text-left">
-                                Design & Develop by StarCode Kh
+                                Design & Develop by SDI
                             </div>
                         </div>
                     </div>
@@ -461,8 +461,8 @@
     <div id="customizerButton" drawer-end="" class="fixed inset-y-0 flex flex-col w-full transition-transform duration-300 ease-in-out transform bg-white shadow ltr:right-0 rtl:left-0 md:w-96 z-drawer show dark:bg-zink-600">
         <div class="flex justify-between p-4 border-b border-slate-200 dark:border-zink-500">
             <div class="grow">
-                <h5 class="mb-1 text-16">starcode Theme Customizer</h5>
-                <p class="font-normal text-slate-500 dark:text-zink-200">Choose your themes & layouts etc.</p>
+                <h5 class="mb-1 text-16">Kustomisasi Tema</h5>
+                <p class="font-normal text-slate-500 dark:text-zink-200">Pilih tema dan layout</p>
             </div>
             <div class="shrink-0">
                 <button data-drawer-close="customizerButton" class="transition-all duration-150 ease-linear text-slate-500 hover:text-slate-800 dark:text-zink-200 dark:hover:text-zink-50"><i data-lucide="x" class="w-4 h-4"></i></button>
@@ -470,7 +470,7 @@
         </div>
         <div class="h-full p-6 overflow-y-auto">
             <div>
-                <h5 class="mb-3 underline capitalize text-15">Choose Layouts</h5>
+                <h5 class="mb-3 underline capitalize text-15">Pilih Layout</h5>
                 <div class="grid grid-cols-1 mb-5 gap-7 sm:grid-cols-2">
                     <div class="relative">
                         <input id="layout-one" name="dataLayout" class="absolute w-4 h-4 border rounded-full appearance-none cursor-pointer ltr:right-2 rtl:left-2 top-2 vertical-menu-btn bg-slate-100 border-slate-300 checked:bg-custom-500 checked:border-custom-500 dark:bg-zink-400 dark:border-zink-500" type="radio" value="vertical" checked="">
