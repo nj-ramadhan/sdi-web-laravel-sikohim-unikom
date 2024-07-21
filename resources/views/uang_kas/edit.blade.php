@@ -78,7 +78,7 @@
 
                             <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">Status</label>
-                                <input type="text" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status', $uang_kas->status) }}" placeholder="Status Tugas Piket">
+                                <input type="text" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status', $uang_kas->status) }}" placeholder="Status Pembayaran">
                             
                                 <!-- error message untuk nim -->
                                 @error('status')

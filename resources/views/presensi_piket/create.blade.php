@@ -17,102 +17,105 @@
                 </li>
             </ul>
         </div>
-        <div class="card border-0 shadow-sm rounded">
-            <form action="{{ route('presensi_piket.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
-                    <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
-                        <div class="card-body">
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Nama Petugas Piket</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama Petugas Piket">
-                            
-                                <!-- error message untuk judul -->
-                                @error('nama')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
+        <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
+            <div class="col-span-12 card 2xl:col-span-12">
+                <div class="card-body">
+                    <form action="{{ route('presensi_piket.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
+                            <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
+                                <div class="card-body">
+                                    <div class="flex flex-col gap-2 py-4">
+                                        <label class="font-weight-bold">Nama Petugas Piket</label>
+                                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama Petugas Piket">
+                                    
+                                        <!-- error message untuk judul -->
+                                        @error('nama')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
-                                @enderror
-                            </div>
 
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">NIM Petugas Piket</label>
-                                <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" placeholder="Masukkan NIM Petugas Piket">
-                            
-                                <!-- error message untuk deskripsi -->
-                                @error('nim')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
+                                    <div class="flex flex-col gap-2 py-4">
+                                        <label class="font-weight-bold">NIM Petugas Piket</label>
+                                        <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" placeholder="Masukkan NIM Petugas Piket">
+                                    
+                                        <!-- error message untuk deskripsi -->
+                                        @error('nim')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
-                                @enderror
-                            </div>
 
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Tanggal Piket</label>
-                                <div class="relative">
-                                    <i data-lucide="calendar-range" class="absolute size-4 ltr:left-3 rtl:right-3 top-3 text-slate-500 dark:text-zink-200"></i>
-                                    <input type="text" class="ltr:pl-10 rtl:pr-10 form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" readonly="readonly" placeholder="Select Date">
+                                    <div class="flex flex-col gap-2 py-4">
+                                        <label class="font-weight-bold">Tanggal Piket</label>
+                                        <div class="relative">
+                                            <i data-lucide="calendar-range" class="absolute size-4 ltr:left-3 rtl:right-3 top-3 text-slate-500 dark:text-zink-200"></i>
+                                            <input type="text" class="@error('tanggal') is-invalid @enderror ltr:pl-10 rtl:pr-10 form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200" data-provider="flatpickr" data-date-format="YYYY-MM-dd" data-range-date="false" name="tanggal" value="{{ old('tanggal') }}" placeholder="Masukkan Tanggal Piket">
+                                        </div>
+                                    
+                                        <!-- error message untuk judul -->
+                                        @error('tanggal')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>                            
                                 </div>
-                                <input type="text" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}" placeholder="Masukkan Tanggal Piket">
-                            
-                                <!-- error message untuk judul -->
-                                @error('tanggal')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>                            
-                        </div>
-                    </div>    
+                            </div>    
 
-                    <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
-                        <div class="card-body">
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Jam Datang</label>
-                                <input type="text" class="form-control @error('jam_datang') is-invalid @enderror" name="jam_datang" value="{{ old('jam_datang') }}" placeholder="Masukkan Jam Datang Piket">
-                            
-                                <!-- error message untuk judul -->
-                                @error('jam_datang')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
+                            <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
+                                <div class="card-body">
+                                    <div class="flex flex-col gap-2 py-4">
+                                        <label class="font-weight-bold">Jam Datang</label>
+                                        <input type="text" class="form-control @error('jam_datang') is-invalid @enderror" name="jam_datang" value="{{ old('jam_datang') }}" placeholder="Masukkan Jam Datang Piket">
+                                    
+                                        <!-- error message untuk judul -->
+                                        @error('jam_datang')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
-                                @enderror
-                            </div>
 
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Jam Pulang</label>
-                                <input type="text" class="form-control @error('jam_pulang') is-invalid @enderror" name="jam_pulang" value="{{ old('jam_pulang') }}" placeholder="Masukkan Jam Pulang Piket">
-                            
-                                <!-- error message untuk deskripsi -->
-                                @error('jam_pulang')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
+                                    <div class="flex flex-col gap-2 py-4">
+                                        <label class="font-weight-bold">Jam Pulang</label>
+                                        <input type="text" class="form-control @error('jam_pulang') is-invalid @enderror" name="jam_pulang" value="{{ old('jam_pulang') }}" placeholder="Masukkan Jam Pulang Piket">
+                                    
+                                        <!-- error message untuk deskripsi -->
+                                        @error('jam_pulang')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
-                                @enderror
+                                    
+                                    <div class="flex flex-col gap-2 py-4">
+                                        <label class="font-weight-bold">Deskripsi Tugas Piket</label>
+                                        <textarea rows="8" class="form-control @error('tugas') is-invalid @enderror" name="tugas" placeholder="Masukkan Deskripsi Tugas Piket">{{ old('tugas') }}</textarea>
+                                    
+                                        <!-- error message untuk deskripsi -->
+                                        @error('tugas')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Deskripsi Tugas Piket</label>
-                                <textarea rows="8" class="form-control @error('tugas') is-invalid @enderror" name="tugas" placeholder="Masukkan Deskripsi Tugas Piket">{{ old('tugas') }}</textarea>
-                            
-                                <!-- error message untuk deskripsi -->
-                                @error('tugas')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                            <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
+                                <div class="card-body">
+                                    <button type="submit" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Simpan Data</button>
+                                    <button type="reset" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Ulangi Pengisian</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
-                        <div class="card-body">
-                            <button type="submit" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Simpan Data</button>
-                            <button type="reset" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Ulangi Pengisian</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     <!-- container-fluid -->

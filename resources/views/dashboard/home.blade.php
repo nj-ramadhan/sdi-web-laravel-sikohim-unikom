@@ -170,7 +170,7 @@
                         </div>
                     </div>
                 </div><!--end col-->
-                
+
                 <div class="col-span-12 card 2xl:col-span-4 2xl:row-span-2">
                     <div class="card-body">
                         <div class="flex items-center mb-3">
@@ -259,6 +259,7 @@
                         <div id="salesRevenueOverview" class="apex-charts" data-chart-colors='["bg-custom-500", "bg-custom-400", "bg-custom-300"]' dir="ltr"></div>
                     </div>
                 </div><!--end col-->
+                
                 <div class="col-span-12 2xl:col-span-4">
                     <div class="grid grid-cols-12 gap-x-5">
                         <div class="col-span-12 card lg:col-span-6 2xl:col-span-12">
