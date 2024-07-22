@@ -116,6 +116,12 @@ Run the database migrations to create the necessary tables in your database:
 
 `php artisan migrate`
 
+
+## Link Storage:
+Link storage:
+
+`php artisan storage:link`
+
 ## Serve the Application:
 Finally, you can use the following command to start the Laravel development server:
 
