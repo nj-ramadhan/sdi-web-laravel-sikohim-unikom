@@ -71,46 +71,46 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Steps to Clone and Set Up the Project:
 Open a terminal or command prompt and navigate to the directory where you want to clone your Laravel project. Then, run the following command:
-'git clone https://github.com/nj-ramadhan/sikohim_unikom.git'
+`git clone https://github.com/nj-ramadhan/sikohim_unikom.git`
 
 
 ## Navigate to the Project Directory:
 Change into the project directory using the following command:
-'cd <project-directory>'
+`cd <project-directory>`
 Replace <project-directory> with the name of your project directory.
 
 
 ## Install Composer Dependencies:
 Laravel uses Composer to manage its dependencies. Run the following command to install the necessary dependencies:
-'composer install'
+`composer install`
 
 
 ## Create a Copy of the Environment File:
 Laravel requires an .env file for configuration. Create a copy of the .env.example file and name it .env:
-'cp .env.example .env'
+`cp .env.example .env`
 Edit the .env file to set up your database connection and other configuration settings.
 
 
 ## Generate Application Key:
 Run the following command to generate the application key:
-'php artisan key:generate'
+`php artisan key:generate`
 Update Your Database Credentials
 After that update your database credentials in your .env file in your project root.
 
-'''
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=your_db
 DB_USERNAME=root
 DB_PASSWORD=#your database password
-'''
+```
 
 ## Migrate Database:
 Run the database migrations to create the necessary tables in your database:
-'php artisan migrate'
+`php artisan migrate`
 
 ## Serve the Application:
 Finally, you can use the following command to start the Laravel development server:
-'php artisan serve'
+`php artisan serve`
 This will make your application accessible at http://localhost:8000 by default.
