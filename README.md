@@ -126,4 +126,5 @@ Link storage:
 Finally, you can use the following command to start the Laravel development server:
 
 `php artisan serve`
+
 This will make your application accessible at http://localhost:8000 by default.
