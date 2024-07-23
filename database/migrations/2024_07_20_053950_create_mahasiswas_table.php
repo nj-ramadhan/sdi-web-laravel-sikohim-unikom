@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
+            $table->string('nim')->primary();
+            $table->string('image')->nullable();
             $table->string('nama');
             $table->string('angkatan');
             $table->string('kelas');

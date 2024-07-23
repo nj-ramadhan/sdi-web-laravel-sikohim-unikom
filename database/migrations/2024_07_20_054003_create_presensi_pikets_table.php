@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('jam_datang');
             $table->dateTime('jam_pulang');
             $table->string('tugas');
-            $table->timestamps();
+            $table->timestamps()->useCurrent();
         });
     }
     /**

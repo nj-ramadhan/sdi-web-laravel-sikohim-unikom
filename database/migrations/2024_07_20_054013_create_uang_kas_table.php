@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nim');
             $table->date('tanggal_bayar');
-            $table->boolean('status');
-
-            $table->timestamps();
+            $table->boolean('status')->nullable();  
+            $table->timestamps()->useCurrent();
         });
     }
     /**

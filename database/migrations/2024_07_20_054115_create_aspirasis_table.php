@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('isi');
             $table->string('pengusul');
             $table->string('nim');
+            $table->boolean('status')->nullable();  
             $table->timestamps();
         });
     }

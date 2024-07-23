@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('judul');
             $table->string('deskripsi');
             $table->string('berkas');
-            $table->boolean('status');          
-            $table->timestamps();
+            $table->boolean('status')->nullable();          
+            $table->timestamps()->useCurrent();
         });
     }
 
