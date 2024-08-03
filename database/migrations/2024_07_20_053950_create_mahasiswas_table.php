@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('angkatan');
             $table->string('kelas');
             $table->string('jabatan');
+            $table->timestamps();
         });
     }
     /**
