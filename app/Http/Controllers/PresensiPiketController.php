@@ -54,7 +54,7 @@ class PresensiPiketController extends Controller
         //validate form
         $request->validate([
             'nama'          => 'required|min:10',
-            'nim'           => 'required|min:10',
+            'nim'           => 'required|min:8',
             'tanggal'       => 'required|date',
             'jam_datang'    => 'required',
             'jam_pulang'    => 'required',

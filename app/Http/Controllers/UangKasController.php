@@ -54,7 +54,7 @@ class UangKasController extends Controller
         //validate form
         $request->validate([
             'nama'              => 'required|min:10',
-            'nim'               => 'required|min:10',
+            'nim'               => 'required|min:8',
             'tanggal_bayar'     => 'required|date',
             'nominal_bayar'     => 'required|numeric|min:10',
             'status'            => 'nullable|min:1'

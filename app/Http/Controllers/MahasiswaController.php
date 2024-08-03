@@ -54,7 +54,7 @@ class MahasiswaController extends Controller
     {
         //validate form
         $request->validate([
-            'id'           => 'required|min:12',
+            'id'           => 'required|min:8',
             'image'          => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama'          => 'required|min:10',
             'angkatan'      => 'required|numeric',
