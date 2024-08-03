@@ -49,10 +49,10 @@
 
                             <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">NIM Mahasiswa</label>
-                                <input type="text" class="form-control @error('id') is-invalid @enderror" name="id" value="{{ old('id') }}" placeholder="Masukkan NIM">
+                                <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" placeholder="Masukkan NIM">
                             
                                 <!-- error message untuk nim -->
-                                @error('id')
+                                @error('nim')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

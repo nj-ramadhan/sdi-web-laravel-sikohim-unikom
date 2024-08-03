@@ -54,7 +54,7 @@ class MahasiswaController extends Controller
     {
         //validate form
         $request->validate([
-            'id'           => 'required|min:8',
+            'nim'           => 'required|min:8',
             'image'          => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama'          => 'required|min:10',
             'angkatan'      => 'required|numeric',
@@ -68,7 +68,7 @@ class MahasiswaController extends Controller
 
         //create mahasiswa
         Mahasiswa::create([
-            'id'           => $request->id,
+            'nim'           => $request->nim,
             'image'          => $image->hashName(),
             'nama'          => $request->nama,
             'angkatan'      => $request->angkatan,
@@ -86,10 +86,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return View
      */
-    public function show(string $id): View
+    public function show(string $nim): View
     {
         //get mahasiswa by ID
-        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa = Mahasiswa::findOrFail($nim);
 
         //render view with mahasiswa
         return view('mahasiswa.show', compact('mahasiswa'));
@@ -101,10 +101,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return View
      */
-    public function edit(string $id): View
+    public function edit(string $nim): View
     {
         //get mahasiswa by ID
-        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa = Mahasiswa::findOrFail($nim);
 
         //render view with mahasiswa
         return view('mahasiswa.edit', compact('mahasiswa'));
@@ -117,7 +117,7 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return RedirectResponse
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, $nim): RedirectResponse
     {
         //validate form
         $request->validate([
@@ -172,10 +172,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return RedirectResponse
      */
-    public function destroy($id): RedirectResponse
+    public function destroy($nim): RedirectResponse
     {
         //get mahasiswa by ID
-        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa = Mahasiswa::findOrFail($nim);
 
         //delete image
         Storage::delete('public/mahasiswa/'. $mahasiswa->image);
