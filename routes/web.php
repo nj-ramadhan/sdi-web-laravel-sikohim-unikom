@@ -11,15 +11,12 @@ function set_active($route) {
 }
 
 Route::get('/', function () {
-    return view('auth.login');
+    // return view('auth.login');
+    return view('dashboard.home');
 });
 
 Route::group(['middleware'=>'auth'],function()
 {
-    Route::get('home',function()
-    {
-        return view('dashboard.home');
-    });
     Route::get('home',function()
     {
         return view('dashboard.home');
@@ -61,7 +58,7 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
 {
     // -------------------------- main dashboard ----------------------//
     Route::controller(HomeController::class)->group(function () {
-        Route::get('/home', 'index')->middleware('auth')->name('home');
+        Route::get('/', 'index')->name('home');
     });
 });
 

@@ -25,35 +25,22 @@
                     <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                         <div class="card-body">
                             <div class="flex flex-col gap-2 py-4">
+                                <label class="font-weight-bold">NIM Pengusul</label>
+                                <input type="text" class="form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim', $aspirasi->mahasiswa_nim) }}" placeholder="Masukkan NIM Pengusul">
+                            
+                                <!-- error message untuk nim pengusul -->
+                                @error('mahasiswa_nim')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">Judul</label>
                                 <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul', $aspirasi->judul) }}" placeholder="Masukkan Judul Aspirasi">
                             
                                 <!-- error message untuk judul -->
                                 @error('judul')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Nama Pengusul</label>
-                                <input type="text" class="form-control @error('pengusul') is-invalid @enderror" name="pengusul" value="{{ old('pengusul', $aspirasi->pengusul) }}" placeholder="Masukkan Nama Pengusul">
-                            
-                                <!-- error message untuk nama pengusul -->
-                                @error('pengusul')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">NIM Pengusul</label>
-                                <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim', $aspirasi->nim) }}" placeholder="Masukkan NIM Pengusul">
-                            
-                                <!-- error message untuk nim pengusul -->
-                                @error('nim')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

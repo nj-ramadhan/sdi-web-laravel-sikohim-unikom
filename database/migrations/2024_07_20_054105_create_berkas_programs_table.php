@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('berkas_programs', function (Blueprint $table) {
             $table->id();
+            $table->string('mahasiswa_nim'); 
             $table->string('judul');
             $table->string('deskripsi');
             $table->string('berkas');
             $table->boolean('status')->nullable();          
             $table->timestamps();
+
+            $table->foreign('mahasiswa_nim')->references('id')->on('mahasiswas')->onDelete('cascade');   
         });
     }
 

@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('aspirasis', function (Blueprint $table) {
             $table->id();
+            $table->string('mahasiswa_nim');
             $table->string('judul');
             $table->text('isi');
-            $table->string('pengusul');
-            $table->string('nim');
             $table->boolean('status')->nullable();  
             $table->timestamps();
-        });
+
+            $table->foreign('mahasiswa_nim')->references('id')->on('mahasiswas')->onDelete('cascade');   
+        }); 
     }
 
     /**

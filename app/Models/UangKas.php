@@ -14,10 +14,14 @@ class UangKas extends Model
      * @var array
      */
     protected $fillable = [
-        'nama',
-        'nim',
+        'mahasiswa_nim',
         'tanggal_bayar',
         'nominal_bayar',
         'status',
     ];
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class,'mahasiswa_nim','id');
+    }
 }

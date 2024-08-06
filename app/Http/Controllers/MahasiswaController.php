@@ -54,27 +54,42 @@ class MahasiswaController extends Controller
     {
         //validate form
         $request->validate([
-            'nim'           => 'required|min:8',
-            'image'          => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'id'            => 'required|min:8',
             'nama'          => 'required|min:10',
             'angkatan'      => 'required|numeric',
             'kelas'         => 'required|min:5',
             'jabatan'       => 'required|min:5'
         ]);
 
-        //upload image
-        $image = $request->file('image');
-        $image->storeAs('public/mahasiswa', $image->hashName());
+        //check if image is uploaded
+        if ($request->hasFile('image')) {
 
-        //create mahasiswa
-        Mahasiswa::create([
-            'nim'           => $request->nim,
-            'image'          => $image->hashName(),
-            'nama'          => $request->nama,
-            'angkatan'      => $request->angkatan,
-            'kelas'         => $request->kelas,
-            'jabatan'       => $request->jabatan
-        ]);
+            //upload new image
+            $image = $request->file('image');
+            $image->storeAs('public/mahasiswa', $image->hashName());
+
+            //update mahasiswa with new image
+            Mahasiswa::create([
+                'id'            => $request->id,
+                'nama'          => $request->nama,
+                'image'         => $image->hashName(),
+                'angkatan'      => $request->angkatan,
+                'kelas'         => $request->kelas,
+                'jabatan'       => $request->jabatan
+            ]);
+
+        } else {
+
+            //update mahasiswa without image
+            Mahasiswa::create([
+                'id'            => $request->id,
+                'nama'          => $request->nama,
+                'angkatan'      => $request->angkatan,
+                'kelas'         => $request->kelas,
+                'jabatan'       => $request->jabatan
+            ]);
+        }
+
 
         //redirect to index
         return redirect()->route('mahasiswa.index')->with(['success' => 'Data Berhasil Disimpan!']);
@@ -86,10 +101,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return View
      */
-    public function show(string $nim): View
+    public function show(string $id): View
     {
         //get mahasiswa by ID
-        $mahasiswa = Mahasiswa::findOrFail($nim);
+        $mahasiswa = Mahasiswa::findOrFail($id);
 
         //render view with mahasiswa
         return view('mahasiswa.show', compact('mahasiswa'));
@@ -101,10 +116,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return View
      */
-    public function edit(string $nim): View
+    public function edit(string $id): View
     {
         //get mahasiswa by ID
-        $mahasiswa = Mahasiswa::findOrFail($nim);
+        $mahasiswa = Mahasiswa::findOrFail($id);
 
         //render view with mahasiswa
         return view('mahasiswa.edit', compact('mahasiswa'));
@@ -117,11 +132,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return RedirectResponse
      */
-    public function update(Request $request, $nim): RedirectResponse
+    public function update(Request $request, $id): RedirectResponse
     {
         //validate form
         $request->validate([
-            'image'          => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama'          => 'required|min:10',
             'angkatan'      => 'required|numeric',
             'kelas'         => 'required|min:5',
@@ -143,8 +157,8 @@ class MahasiswaController extends Controller
 
             //update mahasiswa with new image
             $mahasiswa->update([
-                'image'          => $image->hashName(),
                 'nama'          => $request->nama,
+                'image'         => $image->hashName(),
                 'angkatan'      => $request->angkatan,
                 'kelas'         => $request->kelas,
                 'jabatan'       => $request->jabatan
@@ -154,7 +168,6 @@ class MahasiswaController extends Controller
 
             //update mahasiswa without image
             $mahasiswa->update([
-                'image'          => $image->hashName(),
                 'nama'          => $request->nama,
                 'angkatan'      => $request->angkatan,
                 'kelas'         => $request->kelas,
@@ -172,10 +185,10 @@ class MahasiswaController extends Controller
      * @param  mixed $id
      * @return RedirectResponse
      */
-    public function destroy($nim): RedirectResponse
+    public function destroy($id): RedirectResponse
     {
         //get mahasiswa by ID
-        $mahasiswa = Mahasiswa::findOrFail($nim);
+        $mahasiswa = Mahasiswa::findOrFail($id);
 
         //delete image
         Storage::delete('public/mahasiswa/'. $mahasiswa->image);

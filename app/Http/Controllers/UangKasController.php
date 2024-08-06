@@ -53,20 +53,18 @@ class UangKasController extends Controller
     {
         //validate form
         $request->validate([
-            'nama'              => 'required|min:10',
-            'nim'               => 'required|min:8',
-            'tanggal_bayar'     => 'required|date',
-            'nominal_bayar'     => 'required|numeric|min:10',
-            'status'            => 'nullable|min:1'
+            'mahasiswa_nim' => 'required|min:8',
+            'tanggal_bayar' => 'required|date',
+            'nominal_bayar' => 'required|numeric|min:10',
+            'status'        => 'nullable|min:1'
         ]);
 
         //create uang_kas
         UangKas::create([
-            'nama'              => $request->nama,
-            'nim'               => $request->nim,
-            'tanggal_bayar'     => $request->tanggal_bayar,
-            'nominal_bayar'     => $request->nominal_bayar,
-            'status'            => $request->status
+            'mahasiswa_nim' => $request->mahasiswa_nim,
+            'tanggal_bayar' => $request->tanggal_bayar,
+            'nominal_bayar' => $request->nominal_bayar,
+            'status'        => $request->status
         ]);
 
         //redirect to index
@@ -114,22 +112,20 @@ class UangKasController extends Controller
     {
         //validate form
         $request->validate([
-            'nama'              => 'required|min:10',
-            'nim'               => 'required|min:10',
-            'tanggal_bayar'     => 'required|date',
-            'nominal_bayar'     => 'required|numeric|min:10',
-            'status'            => 'nullable|min:1'
+            'mahasiswa_nim' => 'required|min:8',
+            'tanggal_bayar' => 'required|date',
+            'nominal_bayar' => 'required|numeric|min:10',
+            'status'        => 'nullable|min:1'
         ]);
 
         //get uang_kas by ID
         $uang_kas = UangKas::findOrFail($id);
 
         $uang_kas->update([
-            'nama'              => $request->nama,
-            'nim'               => $request->nim,
-            'tanggal_bayar'     => $request->tanggal_bayar,
-            'nominal_bayar'     => $request->nominal_bayar,
-            'status'            => $request->status
+            'mahasiswa_nim' => $request->mahasiswa_nim,
+            'tanggal_bayar' => $request->tanggal_bayar,
+            'nominal_bayar' => $request->nominal_bayar,
+            'status'        => $request->status
         ]);
 
         //redirect to index

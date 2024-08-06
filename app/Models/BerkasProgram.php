@@ -15,9 +15,15 @@ class BerkasProgram extends Model
      * @var array
      */
     protected $fillable = [
+        'mahasiswa_nim',
         'judul',
         'deskripsi',
         'berkas',
         'status',
-    ];    
+    ];   
+    
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class,'mahasiswa_nim','id');
+    }
 }

@@ -53,8 +53,7 @@ class PresensiPiketController extends Controller
     {
         //validate form
         $request->validate([
-            'nama'          => 'required|min:10',
-            'nim'           => 'required|min:8',
+            'mahasiswa_nim' => 'required|min:8',
             'tanggal'       => 'required|date',
             'jam_datang'    => 'required',
             'jam_pulang'    => 'required',
@@ -63,8 +62,7 @@ class PresensiPiketController extends Controller
 
         //create presensi_piket
         PresensiPiket::create([
-            'nama'          => $request->nama,
-            'nim'           => $request->nim,
+            'mahasiswa_nim' => $request->mahasiswa_nim,
             'tanggal'       => $request->tanggal,
             'jam_datang'    => $request->jam_datang,
             'jam_pulang'    => $request->jam_pulang,
@@ -116,8 +114,7 @@ class PresensiPiketController extends Controller
     {
         //validate form
         $request->validate([
-            'nama'          => 'required|min:10',
-            'nim'           => 'required|min:10',
+            'mahasiswa_nim' => 'required|min:8',
             'tanggal'       => 'required|date',
             'jam_datang'    => 'required',
             'jam_pulang'    => 'required',
@@ -128,8 +125,7 @@ class PresensiPiketController extends Controller
         $presensi_piket = PresensiPiket::findOrFail($id);
 
         $presensi_piket->update([
-            'nama'          => $request->nama,
-            'nim'           => $request->nim,
+            'mahasiswa_nim' => $request->mahasiswa_nim,
             'tanggal'       => $request->tanggal,
             'jam_datang'    => $request->jam_datang,
             'jam_pulang'    => $request->jam_pulang,

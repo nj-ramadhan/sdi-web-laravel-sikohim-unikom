@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('uang_kas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('nim');
+            $table->string('mahasiswa_nim');       
             $table->date('tanggal_bayar');
+            $table->bigInt('nominal_bayar');
             $table->boolean('status')->nullable();  
             $table->timestamps();
-        });
+
+            $table->foreign('mahasiswa_nim')->references('id')->on('mahasiswas')->onDelete('cascade');      
+        }); 
     }
     /**
      * Reverse the migrations.

@@ -26,23 +26,11 @@
                             <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                                 <div class="card-body">
                                     <div class="flex flex-col gap-2 py-4">
-                                        <label class="font-weight-bold">Nama Petugas Piket</label>
-                                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama Petugas Piket">
-                                    
-                                        <!-- error message untuk judul -->
-                                        @error('nama')
-                                            <div class="alert alert-danger mt-2">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="flex flex-col gap-2 py-4">
                                         <label class="font-weight-bold">NIM Petugas Piket</label>
-                                        <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" placeholder="Masukkan NIM Petugas Piket">
+                                        <input type="text" class="form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim') }}" placeholder="Masukkan NIM Petugas Piket">
                                     
                                         <!-- error message untuk deskripsi -->
-                                        @error('nim')
+                                        @error('mahasiswa_nim')
                                             <div class="alert alert-danger mt-2">
                                                 {{ $message }}
                                             </div>

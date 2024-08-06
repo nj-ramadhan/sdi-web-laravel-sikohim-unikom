@@ -38,22 +38,10 @@
                             <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">NIM Pengusul</label>
                                 <!-- <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" placeholder="Masukkan NIM Pengusul"> -->
-                                <input type="text" class="typeahead form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" placeholder="Masukkan NIM Pengusul">
+                                <input type="text" class="typeahead form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim') }}" placeholder="Masukkan NIM Pengusul">
                             
                                 <!-- error message untuk nim pengusul -->
-                                @error('nim')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Nama Pengusul</label>
-                                <input type="text" class="form-control @error('pengusul') is-invalid @enderror" name="pengusul" value="{{ old('pengusul') }}" placeholder="Masukkan Nama Pengusul">
-                            
-                                <!-- error message untuk nama pengusul -->
-                                @error('pengusul')
+                                @error('mahasiswa_nim')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

@@ -25,23 +25,11 @@
                     <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                         <div class="card-body">
                             <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Nama Petugas Piket</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama', $presensi_piket->nama) }}" placeholder="Masukkan Nama Petugas Piket">
-                            
-                                <!-- error message untuk judul -->
-                                @error('nama')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">NIM Petugas Piket</label>
-                                <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim', $presensi_piket->nim) }}" placeholder="Masukkan NIM Petugas Piket">
+                                <input type="text" class="form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim', $presensi_piket->mahasiswa_nim) }}" placeholder="Masukkan NIM Petugas Piket">
                             
                                 <!-- error message untuk deskripsi -->
-                                @error('nim')
+                                @error('mahasiswa_nim')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -49,8 +37,11 @@
                             </div>
 
                             <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Tanggal Pulang</label>
-                                <input type="text" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal', $presensi_piket->tanggal) }}" placeholder="Masukkan Tanggal Piket">
+                                <label class="font-weight-bold">Tanggal Piket</label>
+                                <div class="relative">
+                                    <i data-lucide="calendar-range" class="absolute size-4 ltr:left-3 rtl:right-3 top-3 text-slate-500 dark:text-zink-200"></i>
+                                    <input type="text" value="{{ old('tanggal', $presensi_piket->tanggal) }}" class="@error('tanggal') is-invalid @enderror ltr:pl-10 rtl:pr-10 form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200" data-provider="flatpickr" data-date-format="YY-M-d" data-range-date="true" name="tanggal" placeholder="Masukkan Tanggal Piket" >
+                                </div>
                             
                                 <!-- error message untuk deskripsi -->
                                 @error('tanggal')

@@ -54,10 +54,11 @@ class BerkasProgramController extends Controller
     {
         //validate form
         $request->validate([
-            'berkas'          => 'required|mimes:pdf,docx|max:2048',
-            'judul'          => 'required|min:10',
-            'deskripsi'      => 'required|min:10',
-            'status'         => 'nullable|min:1'
+            'mahasiswa_nim' => 'required|min:8',
+            'berkas'        => 'required|mimes:pdf,docx|max:2048',
+            'judul'         => 'required|min:10',
+            'deskripsi'     => 'required|min:10',
+            'status'        => 'nullable|min:1'
         ]);
 
         //upload image
@@ -66,10 +67,11 @@ class BerkasProgramController extends Controller
 
         //create berkas_program
         BerkasProgram::create([
-            'berkas'          => $berkas->hashName(),
-            'judul'          => $request->judul,
-            'deskripsi'      => $request->deskripsi,
-            'status'         => $request->status
+            'mahasiswa_nim' => $request->mahasiswa_nim,
+            'berkas'        => $berkas->hashName(),
+            'judul'         => $request->judul,
+            'deskripsi'     => $request->deskripsi,
+            'status'        => $request->status
         ]);
 
         //redirect to index
@@ -117,10 +119,11 @@ class BerkasProgramController extends Controller
     {
         //validate form
         $request->validate([
-            'berkas'          => 'required|mimes:pdf,docx|max:2048',
-            'judul'          => 'required|min:10',
-            'deskripsi'      => 'required|min:10',
-            'status'         => 'nullable|min:1'
+            'mahasiswa_nim' => 'required|min:8',
+            'berkas'        => 'required|mimes:pdf,docx|max:2048',
+            'judul'         => 'required|min:10',
+            'deskripsi'     => 'required|min:10',
+            'status'        => 'nullable|min:1'
         ]);
 
         //get berkas_program by ID
@@ -138,20 +141,21 @@ class BerkasProgramController extends Controller
 
             //update berkas_program with new image
             $berkas_program->update([
-                'berkas'          => $berkas->hashName(),
-                'judul'          => $request->judul,
-                'deskripsi'      => $request->deskripsi,
-                'status'         => $request->status
+                'mahasiswa_nim' => $request->mahasiswa_nim,
+                'berkas'        => $berkas->hashName(),
+                'judul'         => $request->judul,
+                'deskripsi'     => $request->deskripsi,
+                'status'        => $request->status
             ]);
 
         } else {
 
             //update berkas_program without image
             $berkas_program->update([
-                'berkas'          => $berkas->hashName(),
-                'judul'          => $request->judul,
-                'deskripsi'      => $request->deskripsi,
-                'status'         => $request->status
+                'mahasiswa_nim' => $request->mahasiswa_nim,
+                'judul'         => $request->judul,
+                'deskripsi'     => $request->deskripsi,
+                'status'        => $request->status
             ]);
         }
 

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('presensi_pikets', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('nim');
-            $table->dateTime('jam_datang');
-            $table->dateTime('jam_pulang');
+            $table->string('mahasiswa_nim');
+            $table->date('tanggal');
+            $table->time('jam_datang');
+            $table->time('jam_pulang');
             $table->string('tugas');
             $table->timestamps();
+
+            $table->foreign('mahasiswa_nim')->references('id')->on('mahasiswas')->onDelete('cascade');
         });
     }
     /**

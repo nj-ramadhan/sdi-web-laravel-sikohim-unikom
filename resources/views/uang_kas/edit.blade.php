@@ -25,23 +25,24 @@
                     <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                         <div class="card-body">
                             <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Nama Penyetor</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama', $uang_kas->nama) }}" placeholder="Masukkan Nama Penyetor">
+                                <label class="font-weight-bold">NIM Penyetor</label>
+                                <input type="text" class="form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim', $uang_kas->mahasiswa_nim) }}" placeholder="Masukkan NIM Penyetor">
                             
-                                <!-- error message untuk judul -->
-                                @error('nama')
+                                <!-- error message untuk deskripsi -->
+                                @error('mahasiswa_nim')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
-
                             <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">NIM Penyetor</label>
-                                <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim', $uang_kas->nim) }}" placeholder="Masukkan NIM Penyetor">
-                            
-                                <!-- error message untuk deskripsi -->
-                                @error('nim')
+                                <label class="font-weight-bold">Tanggal Bayar</label>
+                                <div class="relative">
+                                    <i data-lucide="calendar-range" class="absolute size-4 ltr:left-3 rtl:right-3 top-3 text-slate-500 dark:text-zink-200"></i>
+                                    <input type="text" value="{{ old('tanggal_bayar', $uang_kas->tanggal_bayar) }}" class="@error('tanggal_bayar') is-invalid @enderror ltr:pl-10 rtl:pr-10 form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200" data-provider="flatpickr" data-date-format="YY-M-d" data-range-date="true" name="tanggal_bayar" placeholder="Masukkan Tanggal Bayar" >
+                                </div>
+                                <!-- error message untuk judul -->
+                                @error('tanggal_bayar')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -52,18 +53,6 @@
 
                     <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                         <div class="card-body">
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Tanggal Bayar</label>
-                                <input type="text" class="form-control @error('tanggal_bayar') is-invalid @enderror" name="tanggal_bayar" value="{{ old('tanggal_bayar', $uang_kas->tanggal_bayar) }}" placeholder="Masukkan Tanggal Bayar Piket">
-                            
-                                <!-- error message untuk judul -->
-                                @error('tanggal_bayar')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
                             <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">Nominal Bayar</label>
                                 <input type="text" class="form-control @error('nominal_bayar') is-invalid @enderror" name="nominal_bayar" value="{{ old('nominal_bayar', $uang_kas->nominal_bayar) }}" placeholder="Masukkan Nominal Bayar Piket">

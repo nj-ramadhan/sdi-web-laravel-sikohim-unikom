@@ -15,11 +15,33 @@ class Mahasiswa extends Model
      * @var array
      */
     protected $fillable = [
-        'image',
-        'nama',
         'id',
+        'nama',
+        'image',
         'angkatan',
         'kelas',
         'jabatan',
     ];
+
+    public function aspirasi()
+    {
+        return $this->hasMany(Aspirasi::class);
+    }
+
+    public function berkas_program()
+    {
+        return $this->hasMany(BerkasProgram::class);
+    }
+
+    public function presensi_piket()
+    {
+        return $this->hasMany(PresensiPiket::class);
+    }
+
+    public function uang_kas()
+    {
+        return $this->hasMany(UangKas::class);
+    }
+
+
 }

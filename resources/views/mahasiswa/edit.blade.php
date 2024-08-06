@@ -18,24 +18,23 @@
             </ul>
         </div>
         <div class="card border-0 shadow-sm rounded">
-            <form action="{{ route('mahasiswa.update', $mahasiswa->nim) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('mahasiswa.update', $mahasiswa->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
                     <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                         <div class="card-body">
-                            <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Foto</label>
-                                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                        <div class="flex flex-col gap-2 py-4">
+                                <label class="font-weight-bold">NIM Mahasiswa</label>
+                                <input type="text" class="form-control @error('id') is-invalid @enderror" name="id" value="{{ old('id', $mahasiswa->id) }}" placeholder="Masukkan NIM">
                             
-                                <!-- error message untuk image -->
-                                @error('image')
+                                <!-- error message untuk nim -->
+                                @error('id')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
-
                             <div class="flex flex-col gap-2 py-4">
                                 <label class="font-weight-bold">Nama Mahasiswa</label>
                                 <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama', $mahasiswa->nama) }}" placeholder="Masukkan Nama">
@@ -47,13 +46,12 @@
                                     </div>
                                 @enderror
                             </div>
-
                             <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">NIM Mahasiswa</label>
-                                <input type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim', $mahasiswa->nim) }}" placeholder="Masukkan NIM">
+                                <label class="font-weight-bold">Foto</label>
+                                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
                             
-                                <!-- error message untuk nim -->
-                                @error('nim')
+                                <!-- error message untuk image -->
+                                @error('image')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

@@ -14,12 +14,16 @@ class PresensiPiket extends Model
      * @var array
      */
     protected $fillable = [
-        'nama',
-        'nim',
+        'mahasiswa_nim',
         'tanggal',
         'jam_datang',
         'jam_pulang',
         'tugas',
     ];
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class,'mahasiswa_nim','id');
+    }
 }
 

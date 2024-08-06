@@ -20,9 +20,9 @@
         <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
             <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                 <div class="card-body">
-                    <h6>NIM Pengusul</h6><h3>{{ $aspirasi->nim }}</h3>
+                    <h6>NIM Pengusul</h6><h3>{{ $aspirasi->mahasiswa_nim }}</h3>
                     <hr/><br/>
-                    <h6>Nama Pengusul</h6><h3>{{ $aspirasi->pengusul }}</h3>
+                    <h6>Nama Pengusul</h6><h3>{{ $aspirasi->mahasiswa->nama }}</h3>
                     <hr/><br/>
                     <h6>Judul</h6><h3>{{ $aspirasi->judul }}</h3>
                     <hr/><br/>

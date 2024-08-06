@@ -15,9 +15,14 @@ class Aspirasi extends Model
      * @var array
      */
     protected $fillable = [
+        'mahasiswa_nim',
         'judul',
         'isi',
         'pengusul',
-        'nim',
     ];
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class,'mahasiswa_nim','id');
+    }
 }

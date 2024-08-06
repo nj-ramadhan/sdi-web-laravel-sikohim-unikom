@@ -69,19 +69,17 @@ class AspirasiController extends Controller
     {
         //validate form
         $request->validate([
+            'mahasiswa_nim' => 'required|min:8',
             'judul'         => 'required|min:10',
             'isi'           => 'required|min:25',
-            'pengusul'      => 'required|min:10',
-            'nim'           => 'required|min:12',
         ]);
 
 
         //create aspirasi
         Aspirasi::create([
+            'mahasiswa_nim' => $request->mahasiswa_nim,
             'judul'         => $request->judul,
             'isi'           => $request->isi,
-            'pengusul'      => $request->pengusul,
-            'nim'           => $request->nim,
         ]);
 
         //redirect to index
@@ -129,10 +127,9 @@ class AspirasiController extends Controller
     {
         //validate form
         $request->validate([
-            'judul'          => 'required|min:10',
+            'mahasiswa_nim' => 'required|min:8',
+            'judul'         => 'required|min:10',
             'isi'           => 'required|min:25',
-            'pengusul'      => 'required|min:10',
-            'nim'           => 'required|min:12',
         ]);
 
         //get aspirasi by ID
@@ -140,11 +137,10 @@ class AspirasiController extends Controller
 
         //update aspirasi without image
         $aspirasi->update([
-                'judul'         => $request->judul,
-                'isi'           => $request->isi,
-                'pengusul'      => $request->pengusul,
-                'nim'           => $request->nim,
-            ]);
+            'mahasiswa_nim' => $request->mahasiswa_nim,
+            'judul'         => $request->judul,
+            'isi'           => $request->isi,
+        ]);
 
         //redirect to index
         return redirect()->route('aspirasi.index')->with(['success' => 'Data Berhasil Diubah!']);
