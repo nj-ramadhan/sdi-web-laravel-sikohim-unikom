@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('mahasiswa_nim');       
             $table->date('tanggal_bayar');
-            $table->bigInt('nominal_bayar');
+            $table->bigInteger('nominal_bayar');
             $table->boolean('status')->nullable();  
             $table->timestamps();
 
