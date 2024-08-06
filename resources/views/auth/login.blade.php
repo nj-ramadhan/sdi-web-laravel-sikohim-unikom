@@ -14,6 +14,7 @@
 
             <form action="{{ route('login') }}" class="mt-10" id="" method="POST">
                 @csrf
+                <input type="hidden" name="_method" value="POST">
                 <div class="hidden px-4 py-3 mb-3 text-sm text-green-500 border border-green-200 rounded-md bg-green-50 dark:bg-green-400/20 dark:border-green-500/50" id="successAlert">
                     Kamu <b>berhasil</b> masuk.
                 </div>

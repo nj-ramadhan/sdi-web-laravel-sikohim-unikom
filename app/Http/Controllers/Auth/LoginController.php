@@ -34,7 +34,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -84,7 +84,8 @@ class LoginController extends Controller
                 $updateLastLogin = ['last_login' => $todayDate,];
                 User::where('email',$username)->update($updateLastLogin);
                 Toastr::success('Login successfully :)','Success');
-                return redirect()->intended('home');
+                // return redirect()->intended('home');
+                return redirect('/');
             } else {
                 Toastr::error('fail, WRONG USERNAME OR PASSWORD :)','Error');
                 return redirect('login');
