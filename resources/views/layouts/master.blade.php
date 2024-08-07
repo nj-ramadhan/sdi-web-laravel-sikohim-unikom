@@ -437,11 +437,11 @@
                 <div class="group-data-[layout=horizontal]:mx-auto group-data-[layout=horizontal]:max-w-screen-2xl w-full">
                     <div class="grid items-center grid-cols-1 text-center lg:grid-cols-2 text-slate-400 dark:text-zink-200 ltr:lg:text-left rtl:lg:text-right">
                         <div>
-                            <script>document.write(new Date().getFullYear())</script> SIKOHIM
+                            SIKOHIM (Sistem Informasi Kegiatan Organisasi Himpunan)
                         </div>
                         <div class="hidden lg:block">
                             <div class="ltr:text-right rtl:text-left">
-                                Design & Develop by SDI
+                                SI-UNIKOM @<script>document.write(new Date().getFullYear())</script>
                             </div>
                         </div>
                     </div>
