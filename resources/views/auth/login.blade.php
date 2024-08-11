@@ -9,7 +9,7 @@
 
             <div class="mt-8 text-center">
                 <h4 class="mb-1 text-custom-500 dark:text-custom-500">Selamat Datang !</h4>
-                <p class="text-slate-500 dark:text-zink-200">Masuk untuk menggunakan akun SIKOHIM</p>
+                <p class="text-slate-500 dark:text-zink-200">Masuk untuk menggunakan akun HIMA-SI</p>
             </div>
 
             <form action="{{ route('login') }}" class="mt-10" id="" method="POST">
@@ -39,7 +39,7 @@
                     <button type="submit" class="w-full text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">Log In</button>
                 </div>
                 <div class="mt-10">
-                    <a href="{{ route('home') }}" class="w-full text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">Gunakan SIKOHIM Tanpa Log In</a>
+                    <a href="{{ route('home') }}" class="w-full text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">Gunakan HIMA-SI Tanpa Log In</a>
                 </div>
 
                 <div class="relative text-center my-9 before:absolute before:top-3 before:left-0 before:right-0 before:border-t before:border-t-slate-200 dark:before:border-t-zink-500">
