@@ -20,7 +20,7 @@
         <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
             <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                 <div class="card-body">
-                    <h6>NIM Penyetor</h6><h3>{{ $uang_kas->mahasiswa_nim }}</h3>
+                    <h6>NTA Penyetor</h6><h3>{{ $uang_kas->mahasiswa_nim }}</h3>
                     <hr/><br/>
                     <h6>Nama Penyetor</h6><h3>{{ $uang_kas->nama }}</h3>
                     <hr/><br/>

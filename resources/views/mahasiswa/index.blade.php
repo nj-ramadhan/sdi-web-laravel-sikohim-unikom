@@ -6,11 +6,11 @@
     <div class="container-fluid group-data-[content=boxed]:max-w-boxed mx-auto">
         <div class="flex flex-col gap-2 py-4 md:flex-row md:items-center print:hidden">
             <div class="grow">
-                <h5 class="text-16">Database Mahasiswa</h5>
+                <h5 class="text-16">Database Pengurus</h5>
             </div>
             <ul class="flex items-center gap-2 text-sm font-normal shrink-0">
                 <li class="relative before:content-['\ea54'] before:font-remix ltr:before:-right-1 rtl:before:-left-1  before:absolute before:text-[18px] before:-top-[3px] ltr:pr-4 rtl:pl-4 before:text-slate-400 dark:text-zink-200">
-                    <a href="{{ route('mahasiswa.index') }}" class="text-slate-400 dark:text-zink-200">Mahasiswa</a>
+                    <a href="{{ route('mahasiswa.index') }}" class="text-slate-400 dark:text-zink-200">Pengurus</a>
                 </li>
                 <li class="text-slate-700 dark:text-zink-100">
                     Data
@@ -39,8 +39,8 @@
                             <thead class="ltr:text-left rtl:text-right bg-slate-100 text-slate-500 dark:text-zink-200 dark:bg-zink-600">
                                 <tr>
                                     <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">Foto</th>
-                                    <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">Nama Mahasiswa</th>
-                                    <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">NIM Mahasiswa</th>
+                                    <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">Nama Pengurus</th>
+                                    <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">NTA Pengurus</th>
                                     <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">Tahun Angkatan</th>
                                     <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">Kelas / Tingkat</th>
                                     <th class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">Jabatan</th>
@@ -79,7 +79,7 @@
                                 </tr>
                                 @empty
                                 <div class="alert alert-danger">
-                                    Data Mahasiswa belum Tersedia.
+                                    Data Pengurus belum Tersedia.
                                 </div>
                                 @endforelse
                             </tbody>

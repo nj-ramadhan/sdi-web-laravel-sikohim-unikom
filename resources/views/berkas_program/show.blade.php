@@ -20,7 +20,7 @@
         <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
             <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                 <div class="card-body">
-                    <h6>NIM Pengusul</h6><h3>{{ $berkas_program->mahasiswa_nim }}</h3>
+                    <h6>NTA Pengusul</h6><h3>{{ $berkas_program->mahasiswa_nim }}</h3>
                     <hr/><br/>
                     <h6>Nama Pengusul</h6><h3>{{ $berkas_program->mahasiswa->nama }}</h3>
                     <hr/><br/>

@@ -6,11 +6,11 @@
     <div class="container-fluid group-data-[content=boxed]:max-w-boxed mx-auto">
         <div class="flex flex-col gap-2 py-4 md:flex-row md:items-center print:hidden">
             <div class="grow">
-                <h5 class="text-16">Database Mahasiswa</h5>
+                <h5 class="text-16">Database Pengurus</h5>
             </div>
             <ul class="flex items-center gap-2 text-sm font-normal shrink-0">
                 <li class="relative before:content-['\ea54'] before:font-remix ltr:before:-right-1 rtl:before:-left-1  before:absolute before:text-[18px] before:-top-[3px] ltr:pr-4 rtl:pl-4 before:text-slate-400 dark:text-zink-200">
-                    <a href="{{ route('mahasiswa.index') }}" class="text-slate-400 dark:text-zink-200">Mahasiswa</a>
+                    <a href="{{ route('mahasiswa.index') }}" class="text-slate-400 dark:text-zink-200">Pengurus</a>
                 </li>
                 <li class="text-slate-700 dark:text-zink-100">
                     Detail
@@ -28,7 +28,7 @@
             </div>
             <div class="col-span-12 card lg:col-span-6 2xl:col-span-9">
                 <div class="card-body">
-                    <h6>NIM</h6><h3>{{ $mahasiswa->id }}</h3>
+                    <h6>NTA</h6><h3>{{ $mahasiswa->id }}</h3>
                     <hr/><br/>
                     <h6>Nama</h6><h3>{{ $mahasiswa->nama }}</h3>
                     <hr/><br/>

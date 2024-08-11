@@ -25,8 +25,8 @@
                     <div class="col-span-12 card lg:col-span-6 2xl:col-span-6">
                         <div class="card-body">
                         <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">NIM Pengusul</label>
-                                <input type="text" class="form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim', $berkas_program->mahasiswa_nim) }}" placeholder="Masukkan NIM Pengusul">
+                                <label class="font-weight-bold">NTA Pengusul</label>
+                                <input type="text" class="form-control @error('mahasiswa_nim') is-invalid @enderror" name="mahasiswa_nim" value="{{ old('mahasiswa_nim', $berkas_program->mahasiswa_nim) }}" placeholder="Masukkan NTA Pengusul">
                             
                                 <!-- error message untuk nim pengusul -->
                                 @error('mahasiswa_nim')

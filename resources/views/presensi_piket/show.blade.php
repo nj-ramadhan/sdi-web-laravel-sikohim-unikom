@@ -20,7 +20,7 @@
         <div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-5">
             <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                 <div class="card-body">
-                    <h6>NIM Petugas Piket</h6><h3>{{ $presensi_piket->mahasiswa_nim }}</h3>
+                    <h6>NTA Petugas Piket</h6><h3>{{ $presensi_piket->mahasiswa_nim }}</h3>
                     <hr/><br/>
                     <h6>Nama Petugas Piket</h6><h3>{{ $presensi_piket->mahasiswa->nama }}</h3>
                     <hr/><br/>
