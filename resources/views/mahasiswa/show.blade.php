@@ -34,7 +34,7 @@
                     <hr/><br/>
                     <h6>Angkatan</h6><h3>{{ $mahasiswa->angkatan }}</h3>
                     <hr/><br/>
-                    <h6>Kelas</h6><h3>{{ $mahasiswa->kelas }}</h3>
+                    <h6>Divisi</h6><h3>{{ $mahasiswa->divisi }}</h3>
                     <hr/><br/>
                     <h6>Jabatan</h6><h3>{{ $mahasiswa->jabatan }}</h3>
                     <hr/>

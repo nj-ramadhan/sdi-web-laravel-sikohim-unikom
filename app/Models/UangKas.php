@@ -17,6 +17,7 @@ class UangKas extends Model
         'mahasiswa_nim',
         'tanggal_bayar',
         'nominal_bayar',
+        'bukti_bayar',
         'status',
     ];
 

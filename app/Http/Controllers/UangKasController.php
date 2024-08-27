@@ -56,16 +56,34 @@ class UangKasController extends Controller
             'mahasiswa_nim' => 'required|min:8',
             'tanggal_bayar' => 'required|date',
             'nominal_bayar' => 'required|numeric|min:10',
+            'bukti_bayar'   => 'nullable|min:1',
             'status'        => 'nullable|min:1'
         ]);
+        //check if image is uploaded
+        if ($request->hasFile('image')) {
 
-        //create uang_kas
-        UangKas::create([
-            'mahasiswa_nim' => $request->mahasiswa_nim,
-            'tanggal_bayar' => $request->tanggal_bayar,
-            'nominal_bayar' => $request->nominal_bayar,
-            'status'        => $request->status
-        ]);
+            //upload new image
+            $image = $request->file('image');
+            $image->storeAs('public/uang_kas', $image->hashName());
+
+            //update uang_kas with new image
+            UangKas::create([
+                'mahasiswa_nim' => $request->mahasiswa_nim,
+                'tanggal_bayar' => $request->tanggal_bayar,
+                'nominal_bayar' => $request->nominal_bayar,
+                'bukti_bayar'   => $image->hashName(),
+                'status'        => $request->status
+            ]);
+
+        } else {
+            //create uang_kas without image
+            UangKas::create([
+                'mahasiswa_nim' => $request->mahasiswa_nim,
+                'tanggal_bayar' => $request->tanggal_bayar,
+                'nominal_bayar' => $request->nominal_bayar,
+                'status'        => $request->status
+            ]);
+        }
 
         //redirect to index
         return redirect()->route('uang_kas.index')->with(['success' => 'Data Berhasil Disimpan!']);
@@ -118,15 +136,41 @@ class UangKasController extends Controller
             'status'        => 'nullable|min:1'
         ]);
 
+
         //get uang_kas by ID
         $uang_kas = UangKas::findOrFail($id);
 
-        $uang_kas->update([
-            'mahasiswa_nim' => $request->mahasiswa_nim,
-            'tanggal_bayar' => $request->tanggal_bayar,
-            'nominal_bayar' => $request->nominal_bayar,
-            'status'        => $request->status
-        ]);
+        
+        //check if image is uploaded
+        if ($request->hasFile('image')) {
+
+            //upload new image
+            $image = $request->file('image');
+            $image->storeAs('public/uang_kas', $image->hashName());
+
+            //delete old image
+            Storage::delete('public/uang_kas/'.$uang_kas->image);
+
+            //update uang_kas with new image
+            $uang_kas->update([
+                'mahasiswa_nim' => $request->mahasiswa_nim,
+                'tanggal_bayar' => $request->tanggal_bayar,
+                'nominal_bayar' => $request->nominal_bayar,
+                'bukti_bayar'   => $request->$image->hashName(),
+                'status'        => $request->status
+            ]);
+
+        } else {
+
+            //update uang_kas without image
+            $uang_kas->update([
+                'mahasiswa_nim' => $request->mahasiswa_nim,
+                'tanggal_bayar' => $request->tanggal_bayar,
+                'nominal_bayar' => $request->nominal_bayar,
+                'status'        => $request->status
+            ]);
+        }
+
 
         //redirect to index
         return redirect()->route('uang_kas.index')->with(['success' => 'Data Berhasil Diubah!']);

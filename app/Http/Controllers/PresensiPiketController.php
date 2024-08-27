@@ -156,4 +156,5 @@ class PresensiPiketController extends Controller
         //redirect to index
         return redirect()->route('presensi_piket.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
+    
 }

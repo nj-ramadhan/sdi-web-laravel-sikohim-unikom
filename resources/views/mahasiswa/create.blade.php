@@ -74,11 +74,11 @@
                                 @enderror
                             </div>
                             <div class="flex flex-col gap-2 py-4">
-                                <label class="font-weight-bold">Kelas</label>
-                                <input type="text" class="form-control @error('kelas') is-invalid @enderror" name="kelas" value="{{ old('kelas') }}" placeholder="Masukkan Kelas">
+                                <label class="font-weight-bold">Divisi</label>
+                                <input type="text" class="form-control @error('divisi') is-invalid @enderror" name="divisi" value="{{ old('divisi') }}" placeholder="Masukkan Divisi">
                             
-                                <!-- error message untuk kelas -->
-                                @error('kelas')
+                                <!-- error message untuk divisi -->
+                                @error('divisi')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -89,7 +89,7 @@
                                 <label class="font-weight-bold">Jabatan</label>
                                 <input type="text" class="form-control @error('jabatan') is-invalid @enderror" name="jabatan" value="{{ old('jabatan') }}" placeholder="Masukkan Jabatan">
                             
-                                <!-- error message untuk kelas -->
+                                <!-- error message untuk jabatan -->
                                 @error('jabatan')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
@@ -102,7 +102,6 @@
                     <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                         <div class="card-body">
                             <button type="submit" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Simpan Data</button>
-                            <button type="reset" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Ulangi Pengisian</button>
                         </div>
                     </div>
                 </div>

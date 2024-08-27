@@ -663,5 +663,6 @@
     <script src="{{ URL::to('assets/js/pages/dashboards-ecommerce.init.js')}}"></script>
     <!-- App js -->
     <script src="{{ URL::to('assets/js/app.js')}}"></script>
+    <x-flatpickr::script url="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"/>
 </body>
 </html>

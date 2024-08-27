@@ -54,10 +54,10 @@ class MahasiswaController extends Controller
     {
         //validate form
         $request->validate([
-            'id'            => 'required|min:8',
+            'id'            => 'required|min:6',
             'nama'          => 'required|min:10',
             'angkatan'      => 'required|numeric',
-            'kelas'         => 'required|min:5',
+            'divisi'         => 'required|min:4',
             'jabatan'       => 'required|min:5'
         ]);
 
@@ -74,7 +74,7 @@ class MahasiswaController extends Controller
                 'nama'          => $request->nama,
                 'image'         => $image->hashName(),
                 'angkatan'      => $request->angkatan,
-                'kelas'         => $request->kelas,
+                'divisi'         => $request->divisi,
                 'jabatan'       => $request->jabatan
             ]);
 
@@ -85,7 +85,7 @@ class MahasiswaController extends Controller
                 'id'            => $request->id,
                 'nama'          => $request->nama,
                 'angkatan'      => $request->angkatan,
-                'kelas'         => $request->kelas,
+                'divisi'         => $request->divisi,
                 'jabatan'       => $request->jabatan
             ]);
         }
@@ -138,7 +138,7 @@ class MahasiswaController extends Controller
         $request->validate([
             'nama'          => 'required|min:10',
             'angkatan'      => 'required|numeric',
-            'kelas'         => 'required|min:5',
+            'divisi'         => 'required|min:4',
             'jabatan'       => 'required|min:5'
         ]);
 
@@ -160,7 +160,7 @@ class MahasiswaController extends Controller
                 'nama'          => $request->nama,
                 'image'         => $image->hashName(),
                 'angkatan'      => $request->angkatan,
-                'kelas'         => $request->kelas,
+                'divisi'         => $request->divisi,
                 'jabatan'       => $request->jabatan
             ]);
 
@@ -170,7 +170,7 @@ class MahasiswaController extends Controller
             $mahasiswa->update([
                 'nama'          => $request->nama,
                 'angkatan'      => $request->angkatan,
-                'kelas'         => $request->kelas,
+                'divisi'         => $request->divisi,
                 'jabatan'       => $request->jabatan
             ]);
         }

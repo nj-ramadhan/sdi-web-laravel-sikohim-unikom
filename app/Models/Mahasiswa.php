@@ -19,7 +19,7 @@ class Mahasiswa extends Model
         'nama',
         'image',
         'angkatan',
-        'kelas',
+        'divisi',
         'jabatan',
     ];
 

@@ -40,7 +40,7 @@
                                 <label class="font-weight-bold">Tanggal Piket</label>
                                 <div class="relative">
                                     <i data-lucide="calendar-range" class="absolute size-4 ltr:left-3 rtl:right-3 top-3 text-slate-500 dark:text-zink-200"></i>
-                                    <input type="text" value="{{ old('tanggal', $presensi_piket->tanggal) }}" class="@error('tanggal') is-invalid @enderror ltr:pl-10 rtl:pr-10 form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200" data-provider="flatpickr" data-date-format="YY-M-d" data-range-date="true" name="tanggal" placeholder="Masukkan Tanggal Piket" >
+                                    <input type="text" value="{{ old('tanggal', $presensi_piket->tanggal) }}" class="@error('tanggal') is-invalid @enderror ltr:pl-10 rtl:pr-10 form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200" data-provider="flatpickr" data-date-format="Y-m-d" name="tanggal" placeholder="Masukkan Tanggal Piket" >
                                 </div>
                             
                                 <!-- error message untuk deskripsi -->
@@ -96,7 +96,6 @@
                     <div class="col-span-12 card lg:col-span-12 2xl:col-span-12">
                         <div class="card-body">
                             <button type="submit" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Simpan Data</button>
-                            <button type="reset" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-500/20 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-500/20 dark:ring-custom-400/20">Ulangi Pengisian</button>
                         </div>
                     </div>
                 </div>

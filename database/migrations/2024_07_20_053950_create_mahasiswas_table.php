@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('image')->nullable();            
             $table->string('angkatan');
-            $table->string('kelas');
+            $table->string('divisi');
             $table->string('jabatan');
             $table->timestamps();
         });
