@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\UpdateStart;
- 
-Route::get('/update-start', UpdateStart::class);
+
 /** for side bar menu active */
 function set_active($route) {
     if (is_array($route )){
